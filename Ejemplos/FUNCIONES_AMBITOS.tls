@@ -1,0 +1,15 @@
+def n, resultado of int;
+function factorial = int (n = int)
+def m of int;
+if (n <= 1)
+return 1;
+else
+m = n - 1;
+return n * factorial(m);
+endif
+end_function
+class
+n = 6;
+resultado = factorial(n);
+write("Factorial", resultado, "n global", n);
+endclass

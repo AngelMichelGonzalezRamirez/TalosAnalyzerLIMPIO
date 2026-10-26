@@ -1,0 +1,163 @@
+﻿Diagrama	Pagina_Fe	Produccion	Fila_MProducciones	LHS	RHS_anotado	Columna_MProducciones	Despues_de_simbolos	Accion	Nombre	Efecto	Codigo
+PROGRAM	7	1	0	PROGRAM	DECLARA_LIBRARY PROGRAM2 DECLARA_CLASS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PROGRAM	7	2	1	PROGRAM2	{DECL_BEGIN:3000} def IDCOF TIPOSEP TIPO ; {DECL_END:3003} PROGRAM2	1	0	3000	DECL_BEGIN	Vaciar nombres pendientes y tipo de declaración. No modificar símbolos ya declarados.	talossemantica.cpp:145
+PROGRAM	7	2	1	PROGRAM2	{DECL_BEGIN:3000} def IDCOF TIPOSEP TIPO ; {DECL_END:3003} PROGRAM2	7	5	3003	DECL_END	Para cada id pendiente, rechazar duplicado en el ámbito actual; reservar AP, RAM virtual y tipo.	talossemantica.cpp:148
+PROGRAM	7	3	2	PROGRAM2	DECLARACONST PROGRAM2				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PROGRAM	7	4	3	PROGRAM2	DECLARA_FUNCTION PROGRAM2				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PROGRAM	7	5	4	PROGRAM2					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+DECLARA_LIBRARY	8	7	6	DECLARA_LIBRARY	include id {LIB_NAME:3059} . lib ; DECLARA_LIBRARY	3	2	3059	LIB_NAME	Registrar id en el arreglo lógico de bibliotecas, evitando duplicados. No ejecuta código externo.	talos_modulos.cpp:105
+DECLARA_LIBRARY	8	8	7	DECLARA_LIBRARY					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+DECLARACONST	8	9	8	DECLARACONST	const id {CONST_NAME:3004} = VALOR {CONST_END:3005} ;	3	2	3004	CONST_NAME	Guardar el nombre situado después de const para completar la declaración.	talossemantica.cpp:149
+DECLARACONST	8	9	8	DECLARACONST	const id {CONST_NAME:3004} = VALOR {CONST_END:3005} ;	6	4	3005	CONST_END	POP operando y tipo del literal; declarar símbolo de sólo lectura con ese valor inicial.	talossemantica.cpp:150
+DECLARA_CLASS	8	6	5	DECLARA_CLASS	class ESTATUTOS endclass				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+DECLARA_CLASS	8	127	126	DECLARA_CLASS	ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+DECLARAVAR	8	2	1	PROGRAM2	{DECL_BEGIN:3000} def IDCOF TIPOSEP TIPO ; {DECL_END:3003} PROGRAM2	1	0	3000	DECL_BEGIN	Vaciar nombres pendientes y tipo de declaración. No modificar símbolos ya declarados.	talossemantica.cpp:145
+DECLARAVAR	8	2	1	PROGRAM2	{DECL_BEGIN:3000} def IDCOF TIPOSEP TIPO ; {DECL_END:3003} PROGRAM2	7	5	3003	DECL_END	Para cada id pendiente, rechazar duplicado en el ámbito actual; reservar AP, RAM virtual y tipo.	talossemantica.cpp:148
+DECLARAVAR	8	11	10	IDCOF	id {DECL_ID:3001} IDCOF'	2	1	3001	DECL_ID	Agregar id al arreglo pendiente, comprobando capacidad.	talossemantica.cpp:146
+DECLARAVAR	8	12	11	IDCOF'	, IDCOF				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+DECLARAVAR	8	13	12	IDCOF'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+DECLARAVAR	8	14	13	DECLARAVAR	{DECL_BEGIN:3000} def IDCOF TIPOSEP TIPO ; {DECL_END:3003} DECLARAVAR	1	0	3000	DECL_BEGIN	Vaciar nombres pendientes y tipo de declaración. No modificar símbolos ya declarados.	talossemantica.cpp:145
+DECLARAVAR	8	14	13	DECLARAVAR	{DECL_BEGIN:3000} def IDCOF TIPOSEP TIPO ; {DECL_END:3003} DECLARAVAR	7	5	3003	DECL_END	Para cada id pendiente, rechazar duplicado en el ámbito actual; reservar AP, RAM virtual y tipo.	talossemantica.cpp:148
+DECLARAVAR	8	15	14	DECLARAVAR					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+DECLARAVAR	8	125	124	TIPOSEP	of				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+DECLARAVAR	8	126	125	TIPOSEP	:				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+TIPO_DE_DATO	9	16	15	TIPO	int {TYPE:3002}	2	1	3002	TYPE	Traducir el código del token al índice de tipo de MCubo y MAsignacion.	talossemantica.cpp:147
+TIPO_DE_DATO	9	17	16	TIPO	float {TYPE:3002}	2	1	3002	TYPE	Traducir el código del token al índice de tipo de MCubo y MAsignacion.	talossemantica.cpp:147
+TIPO_DE_DATO	9	18	17	TIPO	char {TYPE:3002}	2	1	3002	TYPE	Traducir el código del token al índice de tipo de MCubo y MAsignacion.	talossemantica.cpp:147
+TIPO_DE_DATO	9	19	18	TIPO	string {TYPE:3002}	2	1	3002	TYPE	Traducir el código del token al índice de tipo de MCubo y MAsignacion.	talossemantica.cpp:147
+TIPO_DE_DATO	9	20	19	TIPO	bool {TYPE:3002}	2	1	3002	TYPE	Traducir el código del token al índice de tipo de MCubo y MAsignacion.	talossemantica.cpp:147
+TIPO_DE_DATO	9	21	20	TIPO	void {TYPE:3002}	2	1	3002	TYPE	Traducir el código del token al índice de tipo de MCubo y MAsignacion.	talossemantica.cpp:147
+VALOR_CONSTANTE	9	22	21	VALOR	cteentera {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+VALOR_CONSTANTE	9	23	22	VALOR	ctereal {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+VALOR_CONSTANTE	9	24	23	VALOR	ctenotacion {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+VALOR_CONSTANTE	9	25	24	VALOR	ctecaracter {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+VALOR_CONSTANTE	9	26	25	VALOR	ctestring {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+VALOR_CONSTANTE	9	128	127	VALOR	true {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+VALOR_CONSTANTE	9	129	128	VALOR	false {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+DECLARA_FUNCTION	9	34	33	DECLARA_FUNCTION	function id {FUNC_NAME:3044} TIPOFUNCSEP TIPO {FUNC_TYPE:3045} ( PARAMETROS ) {FUNC_PARAMS_END:3048} DECLARAVAR {FUNC_BODY:3049} ESTATUTOS end_function {FUNC_END:3050}	3	2	3044	FUNC_NAME	Registrar nombre único, crear ámbito f+1 y emitir goto pendiente para evitar ejecutar la definición.	talos_modulos.cpp:40
+DECLARA_FUNCTION	9	34	33	DECLARA_FUNCTION	function id {FUNC_NAME:3044} TIPOFUNCSEP TIPO {FUNC_TYPE:3045} ( PARAMETROS ) {FUNC_PARAMS_END:3048} DECLARAVAR {FUNC_BODY:3049} ESTATUTOS end_function {FUNC_END:3050}	6	4	3045	FUNC_TYPE	Guardar el índice de tipo de retorno en MFunciones.	talos_modulos.cpp:48
+DECLARA_FUNCTION	9	34	33	DECLARA_FUNCTION	function id {FUNC_NAME:3044} TIPOFUNCSEP TIPO {FUNC_TYPE:3045} ( PARAMETROS ) {FUNC_PARAMS_END:3048} DECLARAVAR {FUNC_BODY:3049} ESTATUTOS end_function {FUNC_END:3050}	10	7	3048	FUNC_PARAMS_END	Verificar que no queden nombres formales sin tipo.	talos_modulos.cpp:61
+DECLARA_FUNCTION	9	34	33	DECLARA_FUNCTION	function id {FUNC_NAME:3044} TIPOFUNCSEP TIPO {FUNC_TYPE:3045} ( PARAMETROS ) {FUNC_PARAMS_END:3048} DECLARAVAR {FUNC_BODY:3049} ESTATUTOS end_function {FUNC_END:3050}	12	8	3049	FUNC_BODY	Guardar CONT como entrada de función y contar parámetros y variables locales.	talos_modulos.cpp:63
+DECLARA_FUNCTION	9	34	33	DECLARA_FUNCTION	function id {FUNC_NAME:3044} TIPOFUNCSEP TIPO {FUNC_TYPE:3045} ( PARAMETROS ) {FUNC_PARAMS_END:3048} DECLARAVAR {FUNC_BODY:3049} ESTATUTOS end_function {FUNC_END:3050}	15	10	3050	FUNC_END	Emitir endfunc; recorrer flujo por índices para detectar salida sin return en no void; rellenar salto inicial y volver al ámbito global.	talos_modulos.cpp:66
+DECLARA_FUNCTION	9	132	131	TIPOFUNCSEP	=				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+DECLARA_FUNCTION	9	133	132	TIPOFUNCSEP	:				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PARAMETROS	9	27	26	IDCIGUAL	id {PARAM_ID:3046} IDCIGUAL'	2	1	3046	PARAM_ID	Agregar el nombre de parámetro a pendientes del grupo actual.	talos_modulos.cpp:50
+PARAMETROS	9	28	27	IDCIGUAL'	, IDCIGUAL				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PARAMETROS	9	29	28	IDCIGUAL'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PARAMETROS	9	30	29	PARAMETROS	IDCIGUAL TIPOFUNCSEP TIPO {PARAM_TYPE:3047} PARAMETROS'	4	3	3047	PARAM_TYPE	Declarar todos los ids del grupo en el ámbito local; agregar filas de MParametros; incrementar cantidad formal.	talos_modulos.cpp:53
+PARAMETROS	9	31	30	PARAMETROS					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PARAMETROS	9	32	31	PARAMETROS'	, IDCIGUAL TIPOFUNCSEP TIPO {PARAM_TYPE:3047} PARAMETROS'	5	4	3047	PARAM_TYPE	Declarar todos los ids del grupo en el ámbito local; agregar filas de MParametros; incrementar cantidad formal.	talos_modulos.cpp:53
+PARAMETROS	9	33	32	PARAMETROS'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PARAMETROS	9	132	131	TIPOFUNCSEP	=				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PARAMETROS	9	133	132	TIPOFUNCSEP	:				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	36	35	ESTATUTOS	EST_RETURN ; ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	37	36	ESTATUTOS	EST_WRITE ; ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	38	37	ESTATUTOS	EST_READ ; ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	39	38	ESTATUTOS	PREINCUNARIO ; ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	40	39	ESTATUTOS	EST_IF ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	41	40	ESTATUTOS	EST_WHILE ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	42	41	ESTATUTOS	EST_DO ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	43	42	ESTATUTOS	EST_FOR ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	44	43	ESTATUTOS					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	45	44	ESTATUTOS	id {STMT_NAME:3058} ESTATUTOS'	2	1	3058	STMT_NAME	Resolver id como destino o referencia de función; la siguiente producción decide su uso.	talos_modulos.cpp:70
+ESTATUTOS	10	46	45	ESTATUTOS'	EST_ASIG ; ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	47	46	ESTATUTOS'	POSTINCUNARIO ; ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	107	106	ESTATUTOS	CASE ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+ESTATUTOS	10	131	130	ESTATUTOS'	{CALL_BEGIN:3053} ( IDCC ) {CALL_STMT_END:3056} ; ESTATUTOS	1	0	3053	CALL_BEGIN	POP referencia y tipo; exigir función declarada; crear fila de llamada, emitir era y PUSH de fondo falso.	talos_modulos.cpp:79
+ESTATUTOS	10	131	130	ESTATUTOS'	{CALL_BEGIN:3053} ( IDCC ) {CALL_STMT_END:3056} ; ESTATUTOS	5	3	3056	CALL_STMT_END	Comprobar firma y cerrar llamada; emitir gosub; si hay valor descartado, liberar su temporal. Permite void.	talos_modulos.cpp:92
+EST_ASIG	10	45	44	ESTATUTOS	id {STMT_NAME:3058} ESTATUTOS'	2	1	3058	STMT_NAME	Resolver id como destino o referencia de función; la siguiente producción decide su uso.	talos_modulos.cpp:70
+EST_ASIG	10	46	45	ESTATUTOS'	EST_ASIG ; ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EST_ASIG	10	49	48	EST_ASIG	= EXPR {ASSIGN:3008}	3	2	3008	ASSIGN	POP origen y tipo; POP destino y tipo; consultar MAsignacion; emitir (=, origen, vacío, destino); devolver temporal origen a AVAIL.	talossemantica.cpp:154
+EST_READ	10	50	49	IDCREAD	id {READ:3009} IDCREAD'	2	1	3009	READ	Buscar id; comprobar variable modificable; emitir (in, vacío, vacío, AP). El dato se valida al ejecutar.	talossemantica.cpp:155
+EST_READ	10	51	50	IDCREAD'	, IDCREAD				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EST_READ	10	52	51	IDCREAD'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EST_READ	10	53	52	EST_READ	read ( IDCREAD )				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EST_WRITE	10	54	53	WRITE2	EXPR {OUT:3010} WRITE2'	2	1	3010	OUT	POP operando y tipo; emitir (out, vacío, vacío, AP); liberar temporal consumido.	talossemantica.cpp:156
+EST_WRITE	10	55	54	WRITE2'	, WRITE2				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EST_WRITE	10	56	55	WRITE2'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EST_WRITE	10	57	56	EST_WRITE	write ( WRITE2 )				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+PREINCUNARIO	10	58	57	PREINCUNARIO	++ id {INC:3017}	3	2	3017	INC	Resolver id; exigir numérico modificable; emitir (+, id, 1, id).	talossemantica.cpp:163
+PREINCUNARIO	10	59	58	PREINCUNARIO	-- id {DEC:3018}	3	2	3018	DEC	Resolver id; exigir numérico modificable; emitir (-, id, 1, id).	talossemantica.cpp:163
+POSTINCUNARIO	10	45	44	ESTATUTOS	id {STMT_NAME:3058} ESTATUTOS'	2	1	3058	STMT_NAME	Resolver id como destino o referencia de función; la siguiente producción decide su uso.	talos_modulos.cpp:70
+POSTINCUNARIO	10	47	46	ESTATUTOS'	POSTINCUNARIO ; ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+POSTINCUNARIO	10	60	59	POSTINCUNARIO	++ {POSTINC:3019}	2	1	3019	POSTINC	POP id y tipo previamente reconocidos; validar; emitir (+, id, 1, id).	talossemantica.cpp:163
+POSTINCUNARIO	10	61	60	POSTINCUNARIO	-- {POSTDEC:3020}	2	1	3020	POSTDEC	POP id y tipo previamente reconocidos; validar; emitir (-, id, 1, id).	talossemantica.cpp:163
+EST_DO	11	62	61	EST_DO	do {DO_BEGIN:3036} ESTATUTOS dowhile ( EXPR ) enddo {DO_END:3037}	2	1	3036	DO_BEGIN	Crear marca de ciclo y guardar CONT, anterior al primer estatuto del cuerpo.	talossemantica.cpp:187
+EST_DO	11	62	61	EST_DO	do {DO_BEGIN:3036} ESTATUTOS dowhile ( EXPR ) enddo {DO_END:3037}	9	7	3037	DO_END	POP bool; emitir gotov hacia el inicio del cuerpo; quitar marca y contexto.	talossemantica.cpp:188
+EST_IF	11	63	62	IF1	{IF_NEXT:3023} elseif ( EXPR ) {IF_TEST:3022} ESTATUTOS IF1	1	0	3023	IF_NEXT	Emitir goto pendiente para saltar las ramas restantes; POP del falso anterior y rellenarlo con CONT; PUSH de la nueva salida.	talossemantica.cpp:170
+EST_IF	11	63	62	IF1	{IF_NEXT:3023} elseif ( EXPR ) {IF_TEST:3022} ESTATUTOS IF1	6	4	3022	IF_TEST	POP condición y tipo bool; emitir gotofalso pendiente; PUSH de su número en saltos; liberar condición temporal.	talossemantica.cpp:169
+EST_IF	11	64	63	IF1					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EST_IF	11	65	64	IF2	{IF_NEXT:3023} else ESTATUTOS	1	0	3023	IF_NEXT	Emitir goto pendiente para saltar las ramas restantes; POP del falso anterior y rellenarlo con CONT; PUSH de la nueva salida.	talossemantica.cpp:170
+EST_IF	11	66	65	IF2					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EST_IF	11	67	66	EST_IF	{IF_BEGIN:3021} if ( EXPR ) {IF_TEST:3022} ESTATUTOS IF1 IF2 endif {IF_END:3024}	1	0	3021	IF_BEGIN	Crear fila de contexto IF y PUSH de una marca propia en saltos.	talossemantica.cpp:168
+EST_IF	11	67	66	EST_IF	{IF_BEGIN:3021} if ( EXPR ) {IF_TEST:3022} ESTATUTOS IF1 IF2 endif {IF_END:3024}	6	4	3022	IF_TEST	POP condición y tipo bool; emitir gotofalso pendiente; PUSH de su número en saltos; liberar condición temporal.	talossemantica.cpp:169
+EST_IF	11	67	66	EST_IF	{IF_BEGIN:3021} if ( EXPR ) {IF_TEST:3022} ESTATUTOS IF1 IF2 endif {IF_END:3024}	11	8	3024	IF_END	Rellenar salidas y falso pendiente con CONT hasta la marca de este IF; retirar marca y contexto.	talossemantica.cpp:171
+EST_WHILE	11	68	67	EST_WHILE	{WHILE_BEGIN:3033} while ( EXPR ) {WHILE_TEST:3034} ESTATUTOS endwhile {WHILE_END:3035}	1	0	3033	WHILE_BEGIN	Crear marca de ciclo; guardar CONT como dirección de la condición.	talossemantica.cpp:184
+EST_WHILE	11	68	67	EST_WHILE	{WHILE_BEGIN:3033} while ( EXPR ) {WHILE_TEST:3034} ESTATUTOS endwhile {WHILE_END:3035}	6	4	3034	WHILE_TEST	POP bool; emitir gotofalso pendiente y apilar número; liberar temporal.	talossemantica.cpp:185
+EST_WHILE	11	68	67	EST_WHILE	{WHILE_BEGIN:3033} while ( EXPR ) {WHILE_TEST:3034} ESTATUTOS endwhile {WHILE_END:3035}	9	6	3035	WHILE_END	Emitir goto hacia la condición; rellenar gotofalso con CONT; quitar marca y contexto.	talossemantica.cpp:186
+EST_FOR	11	69	68	EST_FOR	for id {FOR_BEGIN:3038} ( EXPR {FOR_INIT:3039} to EXPR {FOR_TEST:3040} ) ESTATUTOS endfor {FOR_END:3041}	3	2	3038	FOR_BEGIN	Resolver contador int modificable y crear contexto FOR.	talossemantica.cpp:189
+EST_FOR	11	69	68	EST_FOR	for id {FOR_BEGIN:3038} ( EXPR {FOR_INIT:3039} to EXPR {FOR_TEST:3040} ) ESTATUTOS endfor {FOR_END:3041}	6	4	3039	FOR_INIT	POP inicio int; emitir asignación al contador y liberar temporal consumido.	talossemantica.cpp:190
+EST_FOR	11	69	68	EST_FOR	for id {FOR_BEGIN:3038} ( EXPR {FOR_INIT:3039} to EXPR {FOR_TEST:3040} ) ESTATUTOS endfor {FOR_END:3041}	9	6	3040	FOR_TEST	POP límite int; copiarlo a temporal reservado; guardar inicio de prueba; emitir <= y gotofalso pendiente.	talossemantica.cpp:191
+EST_FOR	11	69	68	EST_FOR	for id {FOR_BEGIN:3038} ( EXPR {FOR_INIT:3039} to EXPR {FOR_TEST:3040} ) ESTATUTOS endfor {FOR_END:3041}	13	9	3041	FOR_END	Incrementar contador; emitir goto a prueba; rellenar salida; devolver límite reservado a AVAIL.	talossemantica.cpp:192
+EST_RETURN	11	70	69	EST_RETURN	return EXPR {RETURN_VALUE:3057}	3	2	3057	RETURN_VALUE	POP valor y tipo; exigir función actual no void y compatibilidad con retorno; emitir return y liberar temporal del generador.	talos_modulos.cpp:100
+EXPR	12	71	70	EXPR	EXPR2 EXPR' {EXPR_END:3012}	3	2	3012	EXPR_END	Reducir operadores hasta vacío o fondo falso. Cada reducción usa MCubo, toma temporal de AVAIL y apila el resultado.	talossemantica.cpp:158
+EXPR	12	72	71	EXPR'	|| {PUSH_OP:3011} EXPR	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+EXPR	12	73	72	EXPR'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EXPR2	12	74	73	EXPR2	EXPR3 EXPR2'				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EXPR2	12	75	74	EXPR2'	&& {PUSH_OP:3011} EXPR2	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+EXPR2	12	76	75	EXPR2'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EXPR3	12	77	76	EXPR3	EXPR4				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EXPR3	12	78	77	EXPR3	! {PUSH_OP:3011} EXPR4	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+EXPR4	12	79	78	EXPR4	EXPR5 EXPR41				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EXPR4	12	80	79	EXPR41	OPREL EXPR5				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EXPR4	12	81	80	EXPR41					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+OPREL	12	91	90	OPREL	== {PUSH_OP:3011}	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+OPREL	12	92	91	OPREL	!= {PUSH_OP:3011}	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+OPREL	12	93	92	OPREL	< {PUSH_OP:3011}	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+OPREL	12	94	93	OPREL	<= {PUSH_OP:3011}	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+OPREL	12	95	94	OPREL	> {PUSH_OP:3011}	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+OPREL	12	96	95	OPREL	>= {PUSH_OP:3011}	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+EXPR5	12	82	81	EXPR5	TERM EXPR5'				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+EXPR5	12	83	82	EXPR5'	+ {PUSH_OP:3011} EXPR5	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+EXPR5	12	84	83	EXPR5'	- {PUSH_OP:3011} EXPR5	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+EXPR5	12	85	84	EXPR5'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+TERM	12	86	85	TERM	FACT TERM'				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+TERM	12	87	86	TERM'	* {PUSH_OP:3011} TERM	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+TERM	12	88	87	TERM'	/ {PUSH_OP:3011} TERM	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+TERM	12	89	88	TERM'	% {PUSH_OP:3011} TERM	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+TERM	12	90	89	TERM'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+TERM	12	106	105	TERM'	** {PUSH_OP:3011} TERM	2	1	3011	PUSH_OP	Mientras el tope tenga prioridad mayor o igual y no sea fondo falso, reducir. PUSH del operador reconocido.	talossemantica.cpp:157
+FACT	12	97	96	FACT	id {NAME_REF:3051} LLAMADA_F	2	1	3051	NAME_REF	Buscar primero variable local y luego global; si es función, apilar referencia de función y tipo hasta decidir LLAMADA_F.	talos_modulos.cpp:70
+FACT	12	98	97	FACT	VALOR				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+FACT	12	99	98	FACT	( {FF_PUSH:3013} EXPR ) {FF_POP:3014}	2	1	3013	FF_PUSH	PUSH de marca de fondo falso en operadores después de abrir paréntesis.	talossemantica.cpp:159
+FACT	12	99	98	FACT	( {FF_PUSH:3013} EXPR ) {FF_POP:3014}	5	3	3014	FF_POP	Comprobar marca en el tope y hacer POP; no generar un cuádruplo para el paréntesis.	talossemantica.cpp:160
+FACT	12	130	129	FACT	- {NEG_PUSH:3015} FACT {NEG_END:3016}	2	1	3015	NEG_PUSH	PUSH de operador -u, de aridad uno y prioridad 7.	talossemantica.cpp:161
+FACT	12	130	129	FACT	- {NEG_PUSH:3015} FACT {NEG_END:3016}	4	2	3016	NEG_END	Si el tope es -u, POP operador, un operando y su tipo; emitir negación y apilar temporal.	talossemantica.cpp:162
+LLAMADA_F	12	100	99	IDCC	id {CALL_ARG:3054} IDCC'	2	1	3054	CALL_ARG	Buscar id argumento; consultar formal siguiente y MAsignacion; emitir (param, AP argumento, posición, función). No alterar el argumento.	talos_modulos.cpp:85
+LLAMADA_F	12	101	100	IDCC					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+LLAMADA_F	12	102	101	IDCC'	, id {CALL_ARG:3054} IDCC'	3	2	3054	CALL_ARG	Buscar id argumento; consultar formal siguiente y MAsignacion; emitir (param, AP argumento, posición, función). No alterar el argumento.	talos_modulos.cpp:85
+LLAMADA_F	12	103	102	IDCC'					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+LLAMADA_F	12	104	103	LLAMADA_F	{CALL_BEGIN:3053} ( IDCC ) {CALL_END:3055}	1	0	3053	CALL_BEGIN	POP referencia y tipo; exigir función declarada; crear fila de llamada, emitir era y PUSH de fondo falso.	talos_modulos.cpp:79
+LLAMADA_F	12	104	103	LLAMADA_F	{CALL_BEGIN:3053} ( IDCC ) {CALL_END:3055}	5	3	3055	CALL_END	Comprobar cantidad exacta; retirar fondo falso; reservar temporal no void; emitir gosub y PUSH del temporal y tipo de retorno.	talos_modulos.cpp:92
+LLAMADA_F	12	105	104	LLAMADA_F	{REF_END:3052}	1	0	3052	REF_END	En la rama vacía de LLAMADA_F exigir referencia de variable; rechazar función sin paréntesis.	talos_modulos.cpp:77
+CASE extensión II	Material II pp 42-43	108	107	CASE	case EXPR {CASE_BEGIN:3025} of CASE_ARM CASE_MORE CASE_ELSE end {CASE_END:3031}	3	2	3025	CASE_BEGIN	Exigir selector ordinal int/char/bool; conservarlo apilado y crear marca y contexto CASE.	talossemantica.cpp:172
+CASE extensión II	Material II pp 42-43	108	107	CASE	case EXPR {CASE_BEGIN:3025} of CASE_ARM CASE_MORE CASE_ELSE end {CASE_END:3031}	9	7	3031	CASE_END	POP selector y tipo; rellenar salidas hasta la marca CASE; liberar temporal y cerrar contexto.	talossemantica.cpp:183
+CASE extensión II	Material II pp 42-43	109	108	CASE_ARM	CASE_LABELS : {CASE_LABELS_END:3029} ESTATUTOS {CASE_ARM_END:3030}	3	2	3029	CASE_LABELS_END	Rellenar gotov de las etiquetas con CONT+1; emitir goto pendiente de no coincidencia y apilarlo.	talossemantica.cpp:181
+CASE extensión II	Material II pp 42-43	109	108	CASE_ARM	CASE_LABELS : {CASE_LABELS_END:3029} ESTATUTOS {CASE_ARM_END:3030}	5	3	3030	CASE_ARM_END	Emitir goto pendiente de salida; rellenar la no coincidencia hacia la próxima prueba o else.	talossemantica.cpp:182
+CASE extensión II	Material II pp 42-43	110	109	CASE_MORE	CASE_ARM CASE_MORE				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+CASE extensión II	Material II pp 42-43	111	110	CASE_MORE					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+CASE extensión II	Material II pp 42-43	112	111	CASE_ELSE	else ESTATUTOS				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+CASE extensión II	Material II pp 42-43	113	112	CASE_ELSE					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+CASE extensión II	Material II pp 42-43	114	113	CASE_LABELS	CASE_LABEL CASE_LIST				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+CASE extensión II	Material II pp 42-43	115	114	CASE_LIST	, CASE_LABEL CASE_LIST				DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+CASE extensión II	Material II pp 42-43	116	115	CASE_LIST					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+CASE extensión II	Material II pp 42-43	117	116	CASE_LABEL	ORD {CASE_LOW:3026} CASE_RANGE {CASE_TEST:3028}	2	1	3026	CASE_LOW	POP límite inferior; guardarlo como ambos extremos provisionales.	talossemantica.cpp:173
+CASE extensión II	Material II pp 42-43	117	116	CASE_LABEL	ORD {CASE_LOW:3026} CASE_RANGE {CASE_TEST:3028}	4	2	3028	CASE_TEST	Validar tipos, orden y superposición; emitir igualdad o cierre de rango con <= y &&; reservar gotov y conservar selector.	talossemantica.cpp:180
+CASE extensión II	Material II pp 42-43	118	117	CASE_RANGE	.. {CASE_RANGE_BEGIN:3042} ORD {CASE_HIGH:3027}	2	1	3042	CASE_RANGE_BEGIN	Después de .., comparar selector >= inferior y reservar resultado antes de reconocer el superior.	talossemantica.cpp:174
+CASE extensión II	Material II pp 42-43	118	117	CASE_RANGE	.. {CASE_RANGE_BEGIN:3042} ORD {CASE_HIGH:3027}	4	2	3027	CASE_HIGH	POP límite superior y guardarlo en el contexto de rango.	talossemantica.cpp:179
+CASE extensión II	Material II pp 42-43	119	118	CASE_RANGE					DELEGA	Reconoce la estructura y delega en sus hijos; no emite cuádruplo adicional.	talos_semantica_ui.cpp:parseII
+CASE extensión II	Material II pp 42-43	120	119	ORD	cteentera {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+CASE extensión II	Material II pp 42-43	121	120	ORD	ctecaracter {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+CASE extensión II	Material II pp 42-43	122	121	ORD	true {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+CASE extensión II	Material II pp 42-43	123	122	ORD	false {VALUE:3006}	2	1	3006	VALUE	Buscar o insertar literal en MConstantes; PUSH(AP) en operandos y PUSH(tipo) en tipos.	talossemantica.cpp:151
+CASE extensión II	Material II pp 42-43	124	123	ORD	- cteentera {ORD_NEG:3032}	3	2	3032	ORD_NEG	Registrar el entero con signo negativo como constante y apilar AP y tipo.	talossemantica.cpp:152

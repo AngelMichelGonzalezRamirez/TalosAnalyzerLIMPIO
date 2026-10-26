@@ -1,0 +1,6 @@
+def A of int;
+class read(A);
+if(A>0) A=A+1;
+elseif(A==0) A=10;
+else A=0;
+endif write(A); endclass

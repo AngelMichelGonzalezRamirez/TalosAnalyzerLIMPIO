@@ -1,0 +1,5 @@
+C:/Users/elpol/Downloads/TalosAnalyzer_LIMPIO/Talos_Entrega_Limpia/TalosAnalyzer/build/Desktop_Qt_6_12_0_MinGW_64_bit_Debug/CMakeFiles/TalosAnalyzer.dir
+C:/Users/elpol/Downloads/TalosAnalyzer_LIMPIO/Talos_Entrega_Limpia/TalosAnalyzer/build/Desktop_Qt_6_12_0_MinGW_64_bit_Debug/CMakeFiles/edit_cache.dir
+C:/Users/elpol/Downloads/TalosAnalyzer_LIMPIO/Talos_Entrega_Limpia/TalosAnalyzer/build/Desktop_Qt_6_12_0_MinGW_64_bit_Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/elpol/Downloads/TalosAnalyzer_LIMPIO/Talos_Entrega_Limpia/TalosAnalyzer/build/Desktop_Qt_6_12_0_MinGW_64_bit_Debug/CMakeFiles/TalosAnalyzer_autogen_timestamp_deps.dir
+C:/Users/elpol/Downloads/TalosAnalyzer_LIMPIO/Talos_Entrega_Limpia/TalosAnalyzer/build/Desktop_Qt_6_12_0_MinGW_64_bit_Debug/CMakeFiles/TalosAnalyzer_autogen.dir

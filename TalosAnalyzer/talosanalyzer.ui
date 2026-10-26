@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TalosAnalyzer</class>
+ <widget class="QMainWindow" name="TalosAnalyzer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1313</width>
+    <height>724</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TalosAnalyzer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="JBAbrir">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>630</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Abrir</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="JBLimpiar">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>630</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Limpiar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="JBGuardar">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>630</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Guardar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="JBAnalizar">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>630</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Analizar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="JBSalir">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>630</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Salir</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="JLCodigo">
+    <property name="geometry"><rect><x>20</x><y>10</y><width>721</width><height>20</height></rect></property>
+    <property name="text"><string>Código fuente</string></property>
+    <property name="buddy"><cstring>JTACodigo</cstring></property>
+   </widget>
+   <widget class="QPlainTextEdit" name="JTACodigo">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>32</y>
+      <width>721</width>
+      <height>579</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="JLErrores">
+    <property name="geometry"><rect><x>750</x><y>460</y><width>551</width><height>20</height></rect></property>
+    <property name="text"><string>Errores: línea, columna y descripción</string></property>
+    <property name="buddy"><cstring>JTAErrores</cstring></property>
+   </widget>
+   <widget class="QPlainTextEdit" name="JTAErrores">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>482</y>
+      <width>551</width>
+      <height>169</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="JLSintaxis">
+    <property name="geometry"><rect><x>750</x><y>230</y><width>551</width><height>20</height></rect></property>
+    <property name="text"><string>Resultado del análisis sintáctico</string></property>
+    <property name="buddy"><cstring>JTASintaxis</cstring></property>
+   </widget>
+   <widget class="QPlainTextEdit" name="JTASintaxis">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>252</y>
+      <width>551</width>
+      <height>169</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="JLTokens">
+    <property name="geometry"><rect><x>750</x><y>10</y><width>551</width><height>20</height></rect></property>
+    <property name="text"><string>Tokens: lexema y categoría</string></property>
+    <property name="buddy"><cstring>JTATokens</cstring></property>
+   </widget>
+   <widget class="QPlainTextEdit" name="JTATokens">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>32</y>
+      <width>551</width>
+      <height>169</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1313</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,61 @@
+NoTerminal	FIRST	FOLLOW
+PROGRAM	++ -- case class const def do for function id if include read return while write ε	$
+PROGRAM2	const def function ε	$ ++ -- case class do for id if read return while write
+DECLARA_CLASS	++ -- case class do for id if read return while write ε	$
+DECLARA_LIBRARY	include ε	$ ++ -- case class const def do for function id if read return while write
+DECLARACONST	const	$ ++ -- case class const def do for function id if read return while write
+IDCOF	id	: of
+IDCOF'	, ε	: of
+DECLARAVAR	def ε	++ -- case do end_function for id if read return while write
+TIPO	bool char float int string void	( ) , ;
+VALOR	ctecaracter cteentera ctenotacion ctereal ctestring false true	!= % && ) * ** + , - / ; < <= == > >= of to ||
+IDCIGUAL	id	: =
+IDCIGUAL'	, ε	: =
+PARAMETROS	id ε	)
+PARAMETROS'	, ε	)
+DECLARA_FUNCTION	function	$ ++ -- case class const def do for function id if read return while write
+ESTATUTOS	++ -- case do for id if read return while write ε	$ - ctecaracter cteentera dowhile else elseif end end_function endclass endfor endif endwhile false true
+ESTATUTOS'	( ++ -- =	$ - ctecaracter cteentera dowhile else elseif end end_function endclass endfor endif endwhile false true
+EST_ASIG	=	;
+IDCREAD	id	)
+IDCREAD'	, ε	)
+EST_READ	read	;
+WRITE2	! ( - ctecaracter cteentera ctenotacion ctereal ctestring false id true	)
+WRITE2'	, ε	)
+EST_WRITE	write	;
+PREINCUNARIO	++ --	;
+POSTINCUNARIO	++ --	;
+EST_DO	do	$ ++ - -- case ctecaracter cteentera do dowhile else elseif end end_function endclass endfor endif endwhile false for id if read return true while write
+IF1	elseif ε	else endif
+IF2	else ε	endif
+EST_IF	if	$ ++ - -- case ctecaracter cteentera do dowhile else elseif end end_function endclass endfor endif endwhile false for id if read return true while write
+EST_WHILE	while	$ ++ - -- case ctecaracter cteentera do dowhile else elseif end end_function endclass endfor endif endwhile false for id if read return true while write
+EST_FOR	for	$ ++ - -- case ctecaracter cteentera do dowhile else elseif end end_function endclass endfor endif endwhile false for id if read return true while write
+EST_RETURN	return	;
+EXPR	! ( - ctecaracter cteentera ctenotacion ctereal ctestring false id true	) , ; of to
+EXPR'	|| ε	) , ; of to
+EXPR2	! ( - ctecaracter cteentera ctenotacion ctereal ctestring false id true	) , ; of to ||
+EXPR2'	&& ε	) , ; of to ||
+EXPR3	! ( - ctecaracter cteentera ctenotacion ctereal ctestring false id true	&& ) , ; of to ||
+EXPR4	( - ctecaracter cteentera ctenotacion ctereal ctestring false id true	&& ) , ; of to ||
+EXPR41	!= < <= == > >= ε	&& ) , ; of to ||
+EXPR5	( - ctecaracter cteentera ctenotacion ctereal ctestring false id true	!= && ) , ; < <= == > >= of to ||
+EXPR5'	+ - ε	!= && ) , ; < <= == > >= of to ||
+TERM	( - ctecaracter cteentera ctenotacion ctereal ctestring false id true	!= && ) + , - ; < <= == > >= of to ||
+TERM'	% * ** / ε	!= && ) + , - ; < <= == > >= of to ||
+OPREL	!= < <= == > >=	( - ctecaracter cteentera ctenotacion ctereal ctestring false id true
+FACT	( - ctecaracter cteentera ctenotacion ctereal ctestring false id true	!= % && ) * ** + , - / ; < <= == > >= of to ||
+IDCC	id ε	)
+IDCC'	, ε	)
+LLAMADA_F	( ε	!= % && ) * ** + , - / ; < <= == > >= of to ||
+CASE	case	$ ++ - -- case ctecaracter cteentera do dowhile else elseif end end_function endclass endfor endif endwhile false for id if read return true while write
+CASE_ARM	- ctecaracter cteentera false true	- ctecaracter cteentera else end false true
+CASE_MORE	- ctecaracter cteentera false true ε	else end
+CASE_ELSE	else ε	end
+CASE_LABELS	- ctecaracter cteentera false true	:
+CASE_LIST	, ε	:
+CASE_LABEL	- ctecaracter cteentera false true	, :
+CASE_RANGE	.. ε	, :
+ORD	- ctecaracter cteentera false true	, .. :
+TIPOSEP	: of	bool char float int string void
+TIPOFUNCSEP	: =	bool char float int string void

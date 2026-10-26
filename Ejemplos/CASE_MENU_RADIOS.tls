@@ -1,0 +1,22 @@
+def opción, lado, área : integer;
+def radio, circulo : float;
+def mensaje : string;
+output("Selecciona una opción");
+output("1: calcula el área de un cuadrado");
+output("2: calcula el área de un círculo");
+output("3: da un mensaje");
+input(opción);
+case opción of
+1: output("Dame el valor del lado");
+   input(lado);
+   área = lado * lado;
+   output("El área del cuadrado es: ", área);
+2: output("Dame el valor del radio");
+   input(radio);
+   circulo = 3.1416 * radio * radio;
+   output("El área del círculo es: ", circulo);
+3: output("Escribe un mensaje");
+   input(mensaje);
+   output("El mensaje es: ", mensaje);
+end
+output("Esta ha sido una prueba para el CASE");

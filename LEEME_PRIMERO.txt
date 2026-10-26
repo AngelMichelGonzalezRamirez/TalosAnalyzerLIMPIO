@@ -1,0 +1,67 @@
+TALOS ANALYZER - ENTREGA LIMPIA
+
+IMPORTAR EN QT CREATOR
+
+1. Extraer TODO el ZIP en una ruta corta, por ejemplo C:/Talos.
+   No abrirlo directamente dentro del compresor ni dentro de muchas subcarpetas.
+2. En Qt Creator: Archivo > Abrir archivo o proyecto.
+3. Seleccionar TalosAnalyzer/CMakeLists.txt, NO la carpeta completa.
+4. Seleccionar un kit Desktop de Qt con compilador C++17 instalado.
+5. Pulsar Configurar proyecto y esperar a que termine CMake.
+6. Compilar y ejecutar TalosAnalyzer.
+
+En la vista Proyectos debe aparecer el destino TalosAnalyzer, con Forms,
+Header Files y Source Files. Si aparece <File System>, todavia se esta
+viendo la carpeta o falta completar la configuracion del proyecto/kit.
+Abrir CMakeLists.txt y revisar la salida de CMake si hay un triangulo de aviso.
+
+REQUISITOS
+
+Qt Creator con kit Qt Desktop, modulo Widgets y compilador C++17.
+Se probo con Qt 6.11.2 / MinGW de 64 bits. No hay rutas de Qt fijadas en
+el CMake: cada equipo selecciona su kit. No se exige LinguistTools, Python,
+conexion a Internet ni instalar bibliotecas adicionales del analizador.
+
+CONTENIDO
+
+TalosAnalyzer/ : solo el proyecto de la aplicacion (13 archivos).
+Ejemplos/      : programas de demostracion y datos de entrada.
+Anexos/        : documentacion y pruebas opcionales, fuera del proyecto.
+
+CORRIDA RAPIDA
+
+Abrir Ejemplos/CASE_RANGOS_PIZARRON.tls desde el boton Abrir del programa.
+Pulsar Analizar. En Semantica y cuadruplos revisar la generacion, los
+historiales de PUSH/POP, fondos falsos y saltos pendientes/rellenados.
+En Ejecucion escribir 15 y ejecutar: Q6 falso sigue Q7 y Q13 verdadero
+salta Q15. La salida incluye 'tu numero es mayor'. Con 5 toma ELSE.
+
+CASE_MENU_RADIOS.tls: entradas 2 y 2 (una por linea) producen 12.5664.
+IF_COMPLETO.tls: entrada 0 produce 10.
+FUNCIONES_TIPADAS.tls: sin entradas produce 2.5.
+FUNCIONES_AMBITOS.tls: sin entradas calcula factorial 720 y conserva n=6.
+ERROR_TIPOS.tls debe rechazarse por asignacion incompatible.
+
+Los archivos .entradas contienen los valores; en la interfaz se escriben
+esos valores en el panel de entradas. No son programas .tls.
+
+PRUEBAS OPCIONALES (NO NECESARIAS PARA ABRIR LA APLICACION)
+
+Por defecto solo se importa y compila TalosAnalyzer. Para compilar tambien
+las cuatro suites, activar TALOS_BUILD_TESTS en la configuracion de CMake.
+Despues compilar y ejecutar CTest desde Qt Creator o mediante:
+
+cmake -S TalosAnalyzer -B build-pruebas -DTALOS_BUILD_TESTS=ON
+cmake --build build-pruebas --parallel 4
+ctest --test-dir build-pruebas --output-on-failure
+
+Esos comandos requieren el kit Qt disponible en la terminal. En generadores
+de varias configuraciones, indicar --config Debug al compilar y -C Debug
+al probar. Los ejecutables de prueba quedan en build-pruebas/pruebas.
+
+CONSERVACION
+
+Las matrices y fuentes del analizador son identicas a la version integrada.
+Solo se simplifico CMake y la organizacion del entregable. El nucleo usa
+matrices explicitas y acciones C++; Qt presenta la interfaz y los archivos.
+

@@ -1,0 +1,8 @@
+def numero : float;
+function mitad : float (valor : float)
+return valor / 2;
+end_function
+class
+numero = 5.0;
+write(mitad(numero));
+endclass
